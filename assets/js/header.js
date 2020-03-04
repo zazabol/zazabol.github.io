@@ -118,7 +118,6 @@
       s('.site-main-menu li:not(.menu-item-has-children) > a[href^="#"]').on(
         "click",
         function(e) {
-          e.preventDefault();
           var n = s(this).attr("href");
           s(n).length &&
             s("html,body").animate(
@@ -139,7 +138,6 @@
       s("body").css("overflow", ""), s(".site-search").removeClass("open");
     }),
     s(".toggle-menu").on("click", function(e) {
-      e.preventDefault();
       s('<div class="mask-overlay">')
         .hide()
         .appendTo("body")
@@ -152,7 +150,6 @@
           : s(".sidebar-open .site-nav").css("top", "0");
     }),
     s(".close-menu, .mask-overlay").on("click", function(e) {
-      e.preventDefault(),
         s("html")
           .removeClass("no-scroll sidebar-open")
           .height("auto"),
@@ -177,7 +174,6 @@
         e.stopPropagation();
     }),
     s(".additional-nav").on("click", function(e) {
-      e.preventDefault(),
         s(".additional-menu-wrapper").addClass("menu-open"),
         s(".menu-wrapper").addClass("additional-menu-open");
     }),
@@ -199,9 +195,6 @@
         }),
           s(".menu-wrapper:not(.unit) .menu-item-has-children > a").on(
             "click",
-            function(e) {
-              e.preventDefault();
-            }
           );
         var e = s(".menu-wrapper").data("top");
         if (

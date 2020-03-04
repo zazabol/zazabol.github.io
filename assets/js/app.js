@@ -78,7 +78,6 @@ var PIXELSIGNS = PIXELSIGNS || {};
         }),
         d(".tabs-box").length &&
           d(".tabs-box .pricing-tab  .tab-btn").on("click", function(t) {
-            t.preventDefault();
             var e = d(d(this).attr("data-tab"));
             if (d(e).is(":visible")) return !1;
             e
@@ -115,9 +114,6 @@ var PIXELSIGNS = PIXELSIGNS || {};
         d(".site-main-menu li a").each(function() {
           d(this).attr("href") == location.href.split("/").slice(-1) &&
             d(this).addClass("current_page");
-        }),
-        d("body").on("contextmenu", function(t) {
-          return t.preventDefault(), t.stopPropagation(), !1;
         }),
         d(document).on("keydown", function(t) {
           return !(
@@ -221,7 +217,6 @@ var PIXELSIGNS = PIXELSIGNS || {};
           }
         )),
         d(".toggle-menu").on("click", function(t) {
-          t.preventDefault();
           d("body").toggleClass("open-menu"),
             d('<div class="mask-overlay">')
               .hide()
@@ -292,7 +287,6 @@ var PIXELSIGNS = PIXELSIGNS || {};
           : t.parent(".gp-tabs").removeClass("is-ended");
       }
       s.on("click", function(t) {
-        t.preventDefault();
         var e = d(this);
         if (!e.hasClass("active-tab")) {
           var i = e.data("content"),
